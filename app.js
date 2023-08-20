@@ -27,13 +27,13 @@ function wishMe() {
     }
 
     else {
-        speak("Good Evening Boss");
+        speak("Good Evening eveyone");
     }
 }
 
 window.addEventListener('load', ()=>{
     speak("Activating Inertia");
-    speak("Going online");
+    speak("Going online")
     wishMe();
 })
 
@@ -57,17 +57,31 @@ function speakThis(message) {
     speech.text = "I did not understand what you said please try again";
 
     if(message.includes('hey') || message.includes('hello')) {
-        const finalText = "Hello Boss";
+        const finalText = "Hello Rehan sir";
         speech.text = finalText;
     }
 
     else if(message.includes('how are you')) {
-        const finalText = "I am fine boss tell me how can i help you";
+        const finalText = "I am fine Rehan sir tell me how can i help you";
         speech.text = finalText;
     }
 
     else if(message.includes('name')) {
-        const finalText = "My name is Inertia";
+        const finalText = "My name is Hero";
+        speech.text = finalText;
+    }
+    else if(message.includes('say hi to vice principal mam')) {
+        const finalText = "good moring mam  tell me how can i help you";
+        speech.text = finalText;
+    }
+ 
+    else if(message.includes('who made you')) {
+        const finalText = "i am made by Rehan sir";
+        speech.text = finalText;
+    }
+
+     else if(message.includes('say hello to my friends and teachers ')) {
+        const finalText = "hello eveyone tell me how can i help you";
         speech.text = finalText;
     }
 
@@ -77,9 +91,15 @@ function speakThis(message) {
         speech.text = finalText;
     }
 
-    else if(message.includes('open instagram')) {
-        window.open("https://instagram.com", "_blank");
-        const finalText = "Opening instagram";
+    else if(message.includes('open yadav brand 2')) {
+        window.open("https://www.youtube.com/watch?v=gX8LCV0Lkyc", );
+        const finalText = "Opening yadav brand 2";
+        speech.text = finalText;
+    }
+
+    else if(message.includes('open youtube')) {
+        window.open("https://www.youtube.com", );
+        const finalText = "Opening youtube";
         speech.text = finalText;
     }
 
@@ -89,7 +109,9 @@ function speakThis(message) {
         speech.text = finalText;
     }
 
-    else if(message.includes('wikipedia')) {
+    
+
+    else if(message.includes('open wikipedia')) {
         window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipedia", "")}`, "_blank");
         const finalText = "This is what i found on wikipedia regarding " + message;
         speech.text = finalText;
@@ -112,16 +134,23 @@ function speakThis(message) {
         const finalText = "Opening Calculator";
         speech.text = finalText;
     }
+    else if(message.includes('shut down')) {
+        window.close('Calculator:')
+        const finalText = "shut downj";
+        speech.text = finalText;
+    }
+
 
     else {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
         const finalText = "I found some information for " + message + " on google";
         speech.text = finalText;
     }
+      
 
-    speech.volume = 1;
-    speech.pitch = 1;
-    speech.rate = 1;
+    speech.volume = 2;
+    speech.pitch = 2;
+    speech.rate = 2;
 
     window.speechSynthesis.speak(speech);
 }
